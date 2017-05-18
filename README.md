@@ -2,6 +2,8 @@ Installation RONIN (Fait sur Raspbian jessie lite 2017 04 10)
 ==
 #### Configuration du serveur
 	$ sudo raspi-config 
+		Interfacing Options
+			Activer le serveur SSH
 		Dans Advanced Options 
 			Expand fileSystem 
 		Dans Localisation Option 
