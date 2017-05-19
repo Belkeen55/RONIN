@@ -72,6 +72,7 @@ Installation RONIN (Fait sur Raspbian jessie lite 2017 04 10)
 
 #### Mise en place du git
 	$ cd /var/www/html/ 
+	$ sudo rm index.html 
 	$ git init 
 	$ sudo git remote add hub git@github.com:Belkeen55/RONIN.git 
 	$ git pull hub master 
