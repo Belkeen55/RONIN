@@ -37,19 +37,27 @@ Installation RONIN (Fait sur Raspbian jessie lite 2017 04 10)
 
 #### Preparation des dossiers web
 	$ sudo mkdir /var/www/serveur-test/ 
+	$ sudo mkdir /var/www/codiad/ 
 	$ cd /etc/apache2/sites-available 
-	$ cp 000-default.conf serveur-test.conf 
+	$ sudo cp 000-default.conf serveur-test.conf 
+	$ sudo cp 000-default.conf codiad.conf 
 	$ sudo nano serveur-test.conf 
 		Changer le port et le dossier (Ctrl + O pour enregistrer, Ctrl + X pour fermer) 
+	$ sudo nano codiad.conf 
+		Changer le port et le dossier (Ctrl + O pour enregistrer, Ctrl + X pour fermer) 
 	$ sudo nano /etc/apache2/ports.conf 
-		Ajouter le port du serveur de test
+		Ajouter le port du serveur de test et de codiad : Listen "xx" (Ctrl + O pour enregistrer, Ctrl + X pour fermer) 
 	$ sudo a2ensite serveur-test.conf 
-	$ sudo git clone https://github.com/Codiad/Codiad /var/www/serveur-test/Codiad/
-	$ sudo touch /var/www/serveur-test/config.php 
+	$ sudo a2ensite codiad.conf 
+	$ sudo service apache2 reload 
+	$ sudo git clone https://github.com/Codiad/Codiad /var/www/codiad/ 
+	$ sudo touch /var/www/codiad/config.php 
 	$ sudo chown -R www-data:"Utilisateur" /var/www/html/ 
 	$ sudo chmod -R 770 /var/www/html 
 	$ sudo chown -R www-data:"Utilisateur" /var/www/serveur-test/ 
 	$ sudo chmod -R 770 /var/www/serveur-test 
+	$ sudo chown -R www-data:"Utilisateur" /var/www/codiad/ 
+	$ sudo chmod -R 770 /var/www/codiad 
 	$ sudo reboot 
 	
 #### Creation Key SSH pour GitHUB
