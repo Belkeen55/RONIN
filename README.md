@@ -21,8 +21,6 @@ Installation RONIN (Fait sur Raspbian jessie lite 2017 04 10)
 	Ajouter "utilisateur" ALL=(ALL) NOPASSWD: ALL à la fin du fichier (Ctrl + O pour enregistrer, Ctrl + X pour fermer) 
 	$ logout 
 	login avec "utilisateur" 
-	$ sudo visudo 
-	Retirer la ligne pi ALL=(ALL) NOPASSWD: ALL (Ctrl + O pour enregistrer, Ctrl + X pour fermer) 
 	$ sudo deluser --remove-home pi 
 	$ sudo passwd 
 	
