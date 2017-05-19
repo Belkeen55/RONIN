@@ -62,6 +62,7 @@ Installation RONIN (Fait sur Raspbian jessie lite 2017 04 10)
 	
 #### Creation Key SSH pour GitHUB
 	$ ssh-keygen -t rsa -b 4096 -C "adresse_mail" 
+		Ne pas mettre de nom de fichier et de passphrase 
 	$ cd ~/.ssh 
 	$ eval `ssh-agent -s` 
 	$ eval `ssh-agent -c` 
@@ -85,5 +86,8 @@ Installation RONIN (Fait sur Raspbian jessie lite 2017 04 10)
 	$ git clone https://github.com/billw2/rpi-clone.git 
 	$ cd rpi-clone 
 	$ sudo cp rpi-clone /usr/local/sbin 
-	$ sudo blkid 
-	$ sudo rpi-clone "sdX" 
+	Procedure de clonage :
+		pour connaitre l'idenfifiant de la clé USB
+			$ sudo blkid 
+		Lancer le clonage avec sdX, X étant la lettre de la clé USB cible :
+			$ sudo rpi-clone "sdX" 
